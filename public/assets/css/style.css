@@ -1,0 +1,35 @@
+/* Base -------------------- */
+
+body {
+    font: 1.1em "Carme", sans-serif;
+}
+
+/* Navbar + Jumbotron -------------------- */
+
+.navbar,
+.jumbotron-fluid {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Jumbotron -------------------- */
+
+.jumbotron-fluid .display-3,
+.jumbotron-fluid .lead:first-of-type {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron-fluid .btn {
+    position: relative;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron-fluid .btn:active {
+    top: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Container Articles -------------------- */
+
+.container.articles {
+    padding-top: 100px;
+}
