@@ -2,7 +2,7 @@
  * Web Scraper Server
  */
 
-// Dependencies --------------------/
+// Dependencies -------------------- //
 
 // Third party
 const axios = require("axios"),
@@ -14,16 +14,16 @@ const axios = require("axios"),
     mongoose = require("mongoose");
 
 // Modules
-const db = require("./models");
+const router = require("./routes");
 
-// Components --------------------/
+// Components -------------------- //
 
 // Express app
 const app = express();
     // Server port
     port = process.env.PORT || 3000;
 
-// Setup --------------------/
+// Setup -------------------- //
 
 // Set static directory
 app.use(express.static("public"));
@@ -32,7 +32,11 @@ app.use(express.static("public"));
 const hbs = exphbs.create({
     defaultLayout: "main",
     extname: ".hbs",
-    helpers: {}
+    helpers: {
+        getCurrentDate() {
+            return new Date().getFullYear();
+        }
+    }
 });
 
 // Set view engine
@@ -47,10 +51,11 @@ app.use(cookieParser());
 // Connect with mongoose
 mongoose.connect("mongodb://localhost/webArticles", {useNewUrlParser: true});
 
-// Router --------------------/
+// Router -------------------- //
 
+app.use(router);
 
-// Server Listen --------------------/
+// Server Listen -------------------- //
 
 app.listen(port, () => {
     console.log(`Web Scraper application running on port ${port}`);

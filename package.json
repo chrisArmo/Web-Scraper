@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Chris Armendarez <chris.michael.armo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "start-watch": "nodemon server.js -e js,css,hbs"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
