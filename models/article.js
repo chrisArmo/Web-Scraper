@@ -14,11 +14,16 @@ ArticleSchema = new Schema({
         type: String,
         required: true
     },
-    src: {
+    summary: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    url: {
         type: String,
         required: true
     },
-    url: {
+    src: {
         type: String,
         required: true
     },

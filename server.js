@@ -5,9 +5,7 @@
 // Dependencies -------------------- //
 
 // Third party
-const axios = require("axios"),
-    bodyParser = require("body-parser"),
-    cheerio = require("cheerio"),
+const bodyParser = require("body-parser"),
     cookieParser = require("cookie-parser"),
     express = require("express"),
     exphbs = require("express-handlebars"),
