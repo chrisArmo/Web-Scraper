@@ -7,6 +7,7 @@
 const clearButton = $("#clear"),
     commentButton = $(".comment"),
     viewButton = $(".view"),
+    viewCommentModal = $("#view-comment-modal"),
     commentModal = $("#comment-modal"),
     makeCommentButton = $("#make-comment");
 
@@ -46,7 +47,6 @@ $(document).ready(function(e) {
                 body: modalBody.find("#comment-add").val()
             };
         modalBody.data("id", "");
-
         modalBody.find("#comment-add").val("");
         modalBody.data("title", "");
         commentModal.modal("hide");
@@ -69,8 +69,24 @@ $(document).ready(function(e) {
             url: `/comments/${articleId}`,
             method: "GET"
         })
-        .then((comments) => {
-            
+        .then((commentArr) => {
+            const [comment] = commentArr,
+                modalBody = viewCommentModal.find(".modal-body");
+            viewCommentModal
+                .find(".modal-title")
+                .find("span")
+                .text($(this)
+                    .closest(".card-body")
+                    .find(".summary").text());
+            if (comment.title && comment.body) {
+                modalBody.find(".comment").text(comment.body);
+                modalBody.data("id", comment._id);
+                modalBody.find(".edit").show();
+            } else {
+                modalBody.find(".edit").hide();
+                modalBody.find(".delete").hide();
+            }
+            viewCommentModal.modal("show");
         }, (err) => {
             console.log(err);
         });
