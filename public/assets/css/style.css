@@ -28,8 +28,30 @@ body {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* Container Articles -------------------- */
+/* Articles -------------------- */
 
-.container.articles {
-    padding-top: 100px;
+.articles {
+    padding-top: 75px;
+}
+
+.articles a {
+    color: #ffc008;
+}
+
+/* Subtitle + Card -------------------- */
+
+.subtitle,
+.card-body h5,
+.card-body p {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Card -------------------- */
+
+.card {
+    border: 2px solid #ffc008;
+}
+
+.card-img-top {
+    border-bottom: 1px solid #ffc008;
 }
