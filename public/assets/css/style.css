@@ -55,3 +55,10 @@ body {
 .card-img-top {
     border-bottom: 1px solid #ffc008;
 }
+
+/* Modal -------------------- */
+
+.modal-body p {
+    align-items: center;
+    padding-top: 10px;
+}
