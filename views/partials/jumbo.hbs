@@ -1,10 +1,15 @@
-<div class="jumbotron jumbotron-fluid bg-dark text-light text-center mt-5">
+<div class="jumbotron jumbotron-fluid bg-dark text-light text-center pt-5 mt-4">
     <div class="container">
-        <h1 class="display-3">Gourmet Scrapings</h1>
+        <h1 class="display-4"><i class="fas fa-archive"></i> Gourmet Scrapings</h1>
         <p class="lead my-3">Gathering bits of news and delivering them to you!</p>
         <hr class="my-4">
         <p class="lead">
-            <a class="btn btn-warning btn-lg" href="/scrape" role="button">Commence Article Scraping</a>
+            {{#if scraped }}
+                <a class="btn btn-warning btn-lg m-1" href="/articles" role="button"><i class="far fa-newspaper"></i> View Scraped Articles</a>
+                <button id="clear" class="btn btn-warning btn-lg m-1" role="button"><i class="far fa-trash-alt"></i> Clear Scraped Articles</button>
+            {{else}}
+                <a class="btn btn-warning btn-lg m-1" href="/scraper" role="button"><i class="fas fa-screwdriver"></i> Commence Article Scraping</a>
+            {{/if}}
         </p>
     </div>
 </div>

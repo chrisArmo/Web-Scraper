@@ -1,8 +1,32 @@
 
 <div class="container text-center articles">
-    <h2>{{subtitle}}</h2>
+    <h2 class="mb-3 subtitle"><i class="far fa-newspaper"></i> {{subtitle}}</h2>
     <div class="row">
-        {{!-- Scraped articles here --}}
+        {{#if scrapedArticles }}
+            {{#each scrapedArticles }}
+                <div class="card col-sm-6 col-md-4 col-xl-3 p-0 mb-4">
+                    <img class="card-img-top" src="{{src}}" alt="Card image cap">
+                    <div class="card-body d-flex flex-column bg-dark">
+                        <h5 class="card-title text-light">
+                            <a href="{{url}}" target="_blank">{{headline}}</a>
+                        </h5>
+                        <p class="card-text text-light summary">{{summary}}</p>
+                        <div class="row mt-auto" data-id="{{_id}}">
+                            <button class="btn btn-warning col-sm-10 my-1 mx-auto text-dark comment"><i class="far fa-comment"></i></button>
+                            <button class="btn btn-warning col-sm-10 my-1 mx-auto text-dark view"><i class="far fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <div class="card col-sm-12 p-0 mt-4 text-center">
+                <h5 class="card-header bg-dark text-light">No Articles</h5>
+                <div class="card-body">
+                    <h5 class="card-title my-3">Scrape the web for some!</h5>
+                    <a href="/scraper" class="btn btn-warning mt-3 text-dark"><i class="fas fa-screwdriver"></i> Scrape The Web</a>
+                </div>
+            </div>
+        {{/if}}
     </div>
 </div>
 
