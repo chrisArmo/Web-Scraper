@@ -19,7 +19,9 @@ const router = require("./routes");
 // Express app
 const app = express();
     // Server port
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 3000,
+    // Mongo connection path
+    connectionPath = process.env.MONGODB_URI || "mongodb://localhost/webArticles";
 
 // Setup -------------------- //
 
@@ -47,7 +49,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Connect with mongoose
-mongoose.connect("mongodb://localhost/webArticles", {useNewUrlParser: true});
+mongoose.connect(connectionPath, {useNewUrlParser: true});
 
 // Router -------------------- //
 
