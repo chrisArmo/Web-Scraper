@@ -59,6 +59,11 @@ body {
 /* Modal -------------------- */
 
 .modal-body p {
-    align-items: center;
+    justify-content: center;
     padding-top: 10px;
+}
+
+#comment-modal-label span,
+#view-comment-modal-label span {
+    color: #ffc008;
 }
