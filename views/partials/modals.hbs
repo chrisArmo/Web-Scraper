@@ -4,12 +4,12 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-                <h5 class="modal-title" id="comment-modal-label">Write A Comment for &lsquo;<span></span>&rsquo;</h5>
+                <h5 class="modal-title" id="comment-modal-label">Write A Comment for: &lsquo;<span></span>&rsquo;</h5>
                 <button type="button" class="close text-warning" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body my-3">
                 <input type="text" id="comment-add" class="form-control" placeholder="Enter comment..." required>
             </div>
             <div class="modal-footer">
@@ -25,7 +25,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content bg-dark text-light">
             <div class="modal-header">
-                <h5 class="modal-title" id="view-comment-modal-label">Comment for &lsquo;<span></span>&rsquo;</h5>
+                <h5 class="modal-title" id="view-comment-modal-label">Comment for: &lsquo;<span></span>&rsquo;</h5>
                 <button type="button" class="close text-warning" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -33,12 +33,11 @@
             <div class="modal-body">
                 <p class="d-flex flex-row">
                     <span class="d-inline-block comment">No Comment Yet</span>
-                    <button class="btn btn-warning ml-auto edit" type="button">Edit</button>
-                    <button class="btn btn-danger ml-3 delete" type="button">Delete</button>
                 </p>
             </div>
             <div class="modal-footer">
-                <button id="make-comment" type="button" class="btn btn-warning mx-auto">Save Edit</button>
+                <button class="btn btn-warning ml-auto edit" type="button">Edit</button>
+                <button class="btn btn-danger ml-3 delete" type="button">Delete</button>
             </div>
         </div>
     </div>
