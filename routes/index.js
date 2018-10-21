@@ -111,10 +111,40 @@ router.post("/comments", (req, res) => {
         });
 });
 
+// Update comment
+router.put("/comments/:id", (req, res) => {
+    const {id, body} = req.body;
+    db.Comment
+        .findOneAndUpdate({_id: id}, {body})
+        .then((comment) => {
+            res.status(200).json(comment);
+        })
+        .catch((err) => {
+            res.status(500).json(err);
+        });
+});
+
+// Delete comment
+router.delete("/comments/:id", (req, res) => {
+    const {id} = req.params;
+    db.Comment
+        .findByIdAndDelete(id)
+        .then((comment) => {
+            console.log("Deleted comment:", comment.body);
+            res.status(200).json(comment);
+        })
+        .catch((err) => {
+            res.status(500).json(err);
+        });
+});
+
 // Clear scraped data
 router.delete("/clear", (req, res) => {
     db.Article
         .remove({})
+        .then(() => {
+            return db.Comment.remove({});
+        })
         .then(() => {
             res.redirect(303, "/articles");
         })
